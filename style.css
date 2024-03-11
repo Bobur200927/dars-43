@@ -1,0 +1,31 @@
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.conatiner{
+    max-width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    background-color: rgb(191, 255, 189);
+    padding: 25px;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 50px;
+}
+
+input{
+    width: 80%;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+li{
+    border: 1px solid green;
+    padding: 15px;
+}
