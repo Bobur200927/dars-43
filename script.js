@@ -33,19 +33,24 @@ console.log(d.getSeconds());      //sekund
 console.log(d.getTime());         //millisekund - 1970-01-01-00:00:01
 
 
-// ? ========== Vazifa ============
+// ? ========== Vazifa ===========
 
-let p = document.querySelector('.sana')
-let h = document.querySelector('.soat')
-
-let currentTime = new Date()
-p.innerHTML = `${currentTime.getDate()}/${currentTime.getMonth()+1}/${currentTime.getFullYear()}`
-h.innerHTML = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`
-
-// let p = setTimeout(()=>{
-//     clearInterval('p');
-// }, 1000)
-
-// let h = setTimeout(()=>{
-//     clearInterval('p');
-// }, 1000)
+let h = document.querySelector('h1')
+let p = document.querySelector('p')
+setInterval(() => {
+    let currentTime = new Date()
+    p.innerHTML = `
+    ${(currentTime.getDate() < 10) 
+        ? '0' + currentTime.getDate() 
+        :currentTime.getDate()}/${(currentTime.getMonth() < 10) 
+            ? "0" + (currentTime.getMonth() + 1) 
+            : currentTime.getMonth()}/${currentTime.getFullYear()}`
+    h.innerHTML = `
+    ${(currentTime.getHours() < 10) 
+        ? "0" + currentTime.getHours() 
+        : currentTime.getHours()}:${(currentTime.getMinutes() < 10) 
+            ? "0" + currentTime.getMinutes() 
+            : currentTime.getMinutes()}<sup>${(currentTime.getSeconds() < 10) 
+                ? "0" + currentTime.getSeconds() 
+                : currentTime.getSeconds()}</sup>`
+}, 1000);
